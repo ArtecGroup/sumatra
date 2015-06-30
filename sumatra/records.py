@@ -100,8 +100,8 @@ class Record(object):
             assert not working_copy.has_changed()
         assert_equal(working_copy.current_version(), self.version, "version")
         # Check the main file is in the working copy
-        if self.main_file:
-            check_file_under_version_control(self.main_file, working_copy)
+        #if self.main_file:
+        #    check_file_under_version_control(self.main_file, working_copy)
         # Record dependencies
         logger.debug("Recording dependencies")
         self.dependencies = []
