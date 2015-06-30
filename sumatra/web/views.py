@@ -8,6 +8,7 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from builtins import str
+import ast
 
 
 import mimetypes
@@ -90,6 +91,7 @@ class RecordDetailView(DetailView):
         parameter_set = self.object.parameters.to_sumatra()
         if hasattr(parameter_set, "as_dict"):
             parameter_set = parameter_set.as_dict()
+        parameter_set = ast.literal_eval(parameter_set)
         context['parameters'] = parameter_set
         return context
 
